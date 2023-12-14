@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Game</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d3ffce;
+}
+
+ .header {
+      background-color: #20b2aa;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #008000;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipCard {
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+   width: 400px;
+   height: 375px;
+   position: relative;
+   margin: 50px auto;
+}
+.flipCard .card.flipped {
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+.flipCard .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+.flipCard .card .side {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2;
+  backface-visibility: hidden;  /* W3C */
+  -webkit-backface-visibility: hidden; /* Safari & Chrome */
+  -moz-backface-visibility: hidden; /* Firefox */
+  -ms-backface-visibility: hidden; /* Internet Explorer */
+  -o-backface-visibility: hidden; /* Opera */
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  overflow: auto;
+}
+.flipCard .card .back {
+  background: white;
+  color: black;
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+
+.flipCard .card .front {
+  font-family: Georgia;
+  font-size: 3em;
+  text-align: center;
+  line-height: 160px;
+  background-color: #b0e0e6;
+  border: 3px solid white;
+  color: white;
+
+}
+.flipCard .card .back {
+  background-color: #66cdaa;
+  border: 3px solid white;
+  text-align: center;
+  color: black;
+  padding-top: 50px;
+  font-family: Georgia;
+  font-size: 2em;
+}
+</style>
+<script>
+
+function f(x){
+x.classList.toggle('flipped');
+  
+}
+
+</script>
+</head>
+<body>
+
+<div class="w3-container">
+  <h1 class="header">Try to Recognize</h1>
+  
+  <table class="w3-table-all w3-card-4">
+    <tr>
+
+	<td>
+<div class="flipCard">
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/guitar.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Accoustic<br>Guitar</h2>
+     </div> 
+   </div> 
+ </div> 	
+	</td>
+
+
+	<td>
+<div class="flipCard"> 
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/piano.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Piano</h2>
+     </div> 
+    </div>
+   </div>
+	</td>
+
+	<td>	
+<div class="flipCard"> 
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/recorder.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Recorder</h2>
+     </div> 
+    </div>
+   </div>
+	</td>
+    </tr>
+
+    <tr>
+	<td>
+<div class="flipCard">
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/bass.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Bass</h2>
+     </div> 
+   </div> 
+ </div> 	
+	</td>
+
+	<td>
+<div class="flipCard">
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/drum.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Drum</h2>
+     </div> 
+   </div> 
+ </div> 	
+	</td>
+
+	<td>
+<div class="flipCard">
+  <div class="card" onclick="f(this)"> 
+    <div class="side front"><img src="cardgame/violin.jpg" width="100%" ></div> 
+    <div class="side back">
+	<h2>Violin</h2>
+     </div> 
+   </div> 
+ </div> 	
+	</td>
+
+    </tr>   
+  </table>
+</div>
+
+<tr>
+<a href="dragndrop.html" class="button">Test Yourself></a>
+
+</tr>
+
+<div class="footer">
+    <p>&copy; 2023 Music Learning Center - Kindergarten Learning. All rights reserved.</p>
+  </div>
+
+
+
+
+      
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Solfege Adventures - Kindergarten Learning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #b0e0e6;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+```
+h1 {
+  color: #333333;
+}
+
+.lesson {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.lesson h2 {
+  color: #333333;
+  margin-top: 0;
+}
+
+.lesson p {
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #666666;
+}
+
+.solfege-image {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.solfege-image:hover {
+      transform: scale(1.1);
+}
+
+.quiz {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.quiz h3 {
+  color: #333333;
+  margin-top: 0;
+}
+
+.quiz p {
+  margin-bottom: 10px;
+}
+
+.answer {
+  display: inline-block;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer:hover {
+  background-color: #666666;
+}
+
+@media (max-width: 768px) {
+  .solfege-image {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+  .dashboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+    
+    .dashboard button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #55acee;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+.footer {
+      position:fixed;
+      background-color: #55acee;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      bottom: 0;
+      width: 100%;
+    }
+
+```
+
+</style>
+  <script>
+    function playAudio(audioFile) {
+      var audio = new Audio(audioFile);
+      audio.play();
+    }
+  </script>
+</head>
+<body>
+  <h1>Solfege Adventures - Kindergarten Learning</h1>
+
+<div class="lesson">
+    <h2>Learn Solfege</h2>
+    <img src="solfege/solfege.png" usemap="#image-map">
+
+<map name="image-map">
+    <area target="" alt="Do" title="Do" href="solfege/do.html" coords="81,72,3,1" shape="rect">
+    <area target="" alt="Re" title="Re" href="solfege/re.html" coords="158,73,84,1" shape="rect">
+    <area target="" alt="Mi" title="Mi" href="solfege/mi.html" coords="162,-1,246,72" shape="rect">
+    <area target="" alt="Fa" title="Fa" href="solfege/fa.html" coords="253,-1,331,72" shape="rect">
+    <area target="" alt="Sol" title="Sol" href="solfege/sol.html" coords="2,77,82,139" shape="rect">
+    <area target="" alt="La" title="La" href="solfege/la.html" coords="85,77,161,141" shape="rect">
+    <area target="" alt="Ti" title="Ti" href="solfege/ti.html" coords="164,75,245,140" shape="rect">
+    <area target="" alt="High_Do" title="High_Do" href="solfege/high_do.html" coords="253,77,333,141" shape="rect">
+</map>
+</div>
+  
+
+
+<div class="dashboard">
+    <a href="quiz.html"><button>Quiz</button></a>
+</div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2023 Music Learning Center - Kindergarten Learning. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

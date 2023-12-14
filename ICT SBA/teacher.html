@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <title>Music Learning Center - Teacher Version</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      background-color: #E8F5E9; /* Change the background color to a new theme */
+      font-family: Arial, sans-serif;
+    }
+    
+    .header {
+      background-color: #388E3C; /* Change the header background color */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+    
+    .dashboard button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #388E3C; /* Change the button background color */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    
+    .dashboard button:hover {
+      background-color: #4CAF50; /* Change the button hover background color */
+    }
+    
+    .reports {
+      margin-top: 30px;
+    }
+    
+    .reports table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .reports th,
+    .reports td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .reports th {
+      background-color: #388E3C; /* Change the table header background color */
+      color: #fff;
+    }
+    
+    .announcement {
+      margin-top: 30px;
+    }
+    
+    .announcement input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    
+    .announcement .btn {
+      margin-top: 10px;
+    }
+    
+    .footer {
+      background-color: #388E3C; /* Change the footer background color */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Music Learning Center - Teacher</h1>
+  </div>
+
+  <div class="dashboard">
+    <a href="suggestion.html"><button>Suggestion</button></a>
+    <a href="resources.html"><button>Resources</button></a>
+    <button class="w3-button" onclick="document.location='guest.html'" style="width:auto;">Logout<i class="glyphicon glyphicon-user w3-medium"></i></button>
+  </div>
+
+  <div class="reports">
+    <h2>Student Progress</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Lesson</th>
+          <th>Completion Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Peter Chan</td>
+          <td>Solfege</td>
+          <td>August 13, 2023</td>
+        </tr>
+        <tr>
+          <td>Peter Chan</td>
+          <td>Musical Instrument</td>
+          <td>August 12, 2023</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Solfege</td>
+          <td>August 11, 2023</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Musical Instrument</td>
+          <td>August 10, 2023</td>
+        </tr>
+        <!-- Add more rows for other students as needed -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="announcement">
+    <h2>Announcement</h2>
+    <input type="text" id="announcementInput" placeholder="Enter your announcement">
+    <button class="btn btn-primary"onclick="sendAnnouncement()">Post Announcement</button>
+    <button class="btn btn-secondary" onclick="cancelAnnouncement()">Cancel</button>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2023 Music Learning Center. All rights reserved.</p>
+  </div>
+
+  <script>
+    function sendAnnouncement() {
+  var message = document.getElementById("announcementInput").value;
+  
+  if (message.trim() === "") {
+    alert("Empty message cannot be sent."); // Display an alert if the message is empty
+    return;
+  }
+
+  alert("Your announcement is posted:\n\n" + message);
+
+  // Clear the input field
+  document.getElementById("announcementInput").value = "";
+
+}
+
+    function cancelAnnouncement() {
+    document.getElementById("announcementInput").value = ""; // Clear the input field
+  }
+
+ 
+  
+  </script>
+</body>
+
+</html>

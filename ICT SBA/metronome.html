@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metronome</title>
+  <style>
+    body {
+      background-color: #C8E4B2;
+    }
+
+    #metronome-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .metronome {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .beat-marker {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: beat-animation 0.5s infinite alternate;
+    }
+
+    @keyframes beat-animation {
+      0% {
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.2);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  </style>
+  <script>
+    var intervalId = null; // Variable to store the interval ID
+
+    // Function to play the metronome beat sound
+    function playBeatSound() {
+      var audio = new Audio('metronome.mp3');
+      audio.play();
+    }
+
+    // Function to start the metronome
+    function startMetronome() {
+      if (intervalId === null) {
+        var tempo = parseInt(document.getElementById('tempo').value);
+        var interval = 60000 / tempo; // Convert BPM to milliseconds
+
+        // Play the beat sound and set the interval to repeat
+        playBeatSound();
+        intervalId = setInterval(playBeatSound, interval);
+      }
+    }
+
+    // Function to reset the metronome
+    function resetMetronome() {
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 style="text-align: center;">Metronome</h1>
+  <div id="metronome-container">
+    <img src="metronome.jpg" alt="Metronome" width="200" height="200">
+    <div class="metronome">
+      <div class="beat-marker"></div>
+    </div>
+    <label for="tempo">Tempo (BPM):</label>
+    <input type="number" id="tempo" min="1" max="300" value="120">
+    <button onclick="startMetronome()">Start</button>
+    <button onclick="resetMetronome()">Reset</button>
+    <audio id="beat-sound" src="metronome.mp3"></audio> 
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Solfeggio Learning for Kindergarten</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      padding-top: 50px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #ff6f61;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e8524d;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .solfeggio-image {
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .solfeggio-image:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Music Solfeggio Learning for Kindergarten</h1>
+    <div>
+      <img class="solfeggio-image" src="do.png" alt="Do" onclick="playAudio('do.wav')">
+      <img class="solfeggio-image" src="re.png" alt="Re" onclick="playAudio('re.wav')">
+      <img class="solfeggio-image" src="mi.png" alt="Mi" onclick="playAudio('mi.wav')">
+      <img class="solfeggio-image" src="fa.png" alt="Fa" onclick="playAudio('fa.wav')">
+      <img class="solfeggio-image" src="sol.png" alt="Sol" onclick="playAudio('sol.wav')">
+      <img class="solfeggio-image" src="la.png" alt="La" onclick="playAudio('la.wav')">
+      <img class="solfeggio-image" src="ti.png" alt="Ti" onclick="playAudio('ti.wav')">
+    </div>
+    <div>
+      <button class="button" onclick="resetAudio()">Stop Audio</button>
+    </div>
+  </div>
+
+  <script>
+    var audioElement = null;
+
+    function playAudio(filename) {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+
+      audioElement = new Audio(filename);
+      audioElement.play();
+    }
+
+    function resetAudio() {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+        audioElement = null;
+      }
+    }
+  </script>
+</body>
+</html>

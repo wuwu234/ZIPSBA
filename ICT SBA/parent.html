@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <title>Music Learning Center - Parent Version</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header {
+      background-color: #55acee;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .dashboard-container {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .dashboard {
+      display: flex;
+      align-items: center;
+    }
+    
+    .dashboard button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #55acee;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    
+    .dashboard button:hover {
+      background-color: #3d8bc9;
+    }
+    
+    .reports {
+      margin-top: 30px;
+    }
+    
+    .reports table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .reports th,
+    .reports td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .reports th {
+      background-color: #55acee;
+      color: #fff;
+    }
+    
+    .footer {
+      position: fixed;
+      background-color: #55acee;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .children-info {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+    }
+    
+    .children-info img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    
+    .children-info h2 {
+      margin-bottom: 5px;
+    }
+    
+    .children-info p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Music Learning Center - Parent</h1>
+  </div>
+
+  <div class="children-info">
+    <img src="peter.jpg" alt="Peter">
+    <div>
+      <h2>Peter</h2>
+      <p>Class: K3</p>
+      <p>Class Number: 11</p>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <div class="dashboard">
+      <a href="suggestion.html">
+        <button>Suggestion</button>
+      </a>
+      <a href="resources.html">
+        <button>Resources</button>
+      </a>
+      <button class="w3-button" onclick="document.location='guest.html'" style="width:auto;">Logout<i class="glyphicon glyphicon-user w3-medium"></i></button>
+    </div>
+  </div>
+
+  <div class="reports">
+    <h2>Completed Lessons</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Lesson</th>
+          <th>Completion Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solfege</td>
+          <td>August 13, 2023</td>
+        </tr>
+        <tr>
+          <td>Musical Instrument</td>
+          <td>August 12, 2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2023 Music Learning Center - Kindergarten Learning. All rights reserved.</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background: linear-gradient(to bottom, #ffcccc, #ff99cc);
+}
+
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  border: 2px solid blue;
+  margin: 1rem;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+#div1, #div2, #div3, #div4 {
+  display: inline-block;
+  width: 100px;
+  height: 116px;
+  padding: 0px;
+  border: 5px solid #ff0000;
+  vertical-align: middle;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+<script>
+let score = 0;
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  
+  if (data == "season1" && document.getElementById(ev.target.id).innerHTML == "piano") {
+    document.getElementById(ev.target.id).innerHTML = "";
+    ev.target.appendChild(document.getElementById(data));
+    score = score + 1;
+  }
+
+  if (data == "season2" && document.getElementById(ev.target.id).innerHTML == "guitar") {
+    document.getElementById(ev.target.id).innerHTML = "";
+    ev.target.appendChild(document.getElementById(data));
+    score = score + 1;
+  }
+
+  if (data == "season3" && document.getElementById(ev.target.id).innerHTML == "drum") {
+    document.getElementById(ev.target.id).innerHTML = "";
+    ev.target.appendChild(document.getElementById(data));
+    score = score + 1;
+  }
+
+  if (data == "season4" && document.getElementById(ev.target.id).innerHTML == "violin") {
+    document.getElementById(ev.target.id).innerHTML = "";
+    ev.target.appendChild(document.getElementById(data));
+    score = score + 1;
+  }
+
+  document.getElementById('mark').textContent = score;
+
+  if (score === 4) {
+    setTimeout(function() {
+      alert("Congratulations! You completed the game!");
+    }, 1000); // Delay of 1 second (1000 milliseconds)
+  }
+}
+</script>
+</head>
+<body>
+<div class="header">
+  <h2>Test Your Knowledge:</h2>
+  <p>Score: <span id="mark">0</span></p>
+</div>
+
+<div class="parent">
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">piano</div>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">guitar</div>
+  <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">drum</div>
+  <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">violin</div>
+</div>
+
+<div class="parent">
+  <img id="season1" src="cardgame/piano.jpg" draggable="true" ondragstart="drag(event)" width="100">
+  <img id="season2" src="cardgame/guitar.jpg" draggable="true" ondragstart="drag(event)" width="100">
+  <img id="season3" src="cardgame/drum.jpg" draggable="true" ondragstart="drag(event)" width="100">
+  <img id="season4" src="cardgame/violin.jpg" draggable="true" ondragstart="drag(event)" width="100">
+</div>
+
+<div class="footer">
+    <p>&copy; 2023 Music Learning Center - Kindergarten Learning. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solfege "Mi"</title>
+  <style>
+    body {
+      background-color: #F7DDDD; /* Attractive background color */
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .solfege-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .solfege {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .audio-player {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="solfege-container">
+    <div class="solfege">
+      <h1><img src="mi.png"></h1>
+      <audio controls class="audio-player">
+        <source src="mi.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</body>
+</html>

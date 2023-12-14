@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple-Choice Quiz</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #2980b9, #6dd5fa);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .quiz-container {
+      margin-top: 50px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .options {
+      margin-top: 10px;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Multiple-Choice Quiz</h1>
+
+    <div class="question">
+      <h3>Question 1:</h3>
+      <img src="solfege/re.png" alt="re">
+      <p>Which sofege is it?</p>
+    </div>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q1" value="a">
+        <label for="q1a">a) re</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q1" value="b">
+        <label for="q1b">b) do</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q1" value="c">
+        <label for="q1c">c) sol</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Question 2:</h3>
+      <p>Which sofege has the lowest pitch?</p>
+    </div>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q2" value="a">
+        <label for="q2a">a) do</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q2" value="b">
+        <label for="q2b">b) la</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q2" value="c">
+        <label for="q2c">c) mi</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Question 3:</h3>
+      <img src="solfege/sol.png" alt="sol">
+      <p>Which sofege is it?</p>
+    </div>
+    <div class="options">
+      <div class="option">
+        <input type="radio" name="q3" value="a">
+        <label for="q3a">a) sol</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q3" value="b">
+        <label for="q3b">b) fa</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="q3" value="c">
+        <label for="q3c">c) mi</label>
+      </div>
+    </div>
+
+    <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      var q1Answer = document.querySelector('input[name="q1"]:checked');
+      var q2Answer = document.querySelector('input[name="q2"]:checked');
+      var q3Answer = document.querySelector('input[name="q3"]:checked');
+
+      if (q1Answer && q2Answer && q3Answer) {
+        var score = 0;
+        if (q1Answer.value === 'a' || q1Answer.value === 'c') {
+          score++;
+        }
+        if (q2Answer.value === 'a' || q2Answer.value === 'c') {
+          score++;
+        }
+        if (q3Answer.value === 'a' || q3Answer.value === 'c') {
+          score++;
+        }
+
+        if (score === 3) {
+          alert('All answers are correct! Good job!');
+        } else {
+          alert('You scored ' + score + ' out of 3. Try again!');
+        }
+      } else {
+        alert('Please answer all questions before submitting.');
+      }
+    }
+  </script>
+</body>
+</html>
